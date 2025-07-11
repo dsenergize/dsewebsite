@@ -158,7 +158,8 @@ const Contact = () => {
                 <div>
                   <h4 className='font-semibold text-yellow-400'>Address</h4>
                   <p className='opacity-90'>
-                    123 Solar Street, Energy City, EC 12345
+                    D-77/C Naseem Manzil , Near Umar Masjid, <br /> Shaheen,
+                    Jamia Nagar , Okhla , New Delhi-110025
                   </p>
                 </div>
               </div>
@@ -169,7 +170,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className='font-semibold text-yellow-400'>Phone</h4>
-                  <p className='opacity-90'>+1 (555) 123-4567</p>
+                  <p className='opacity-90'>
+                    <a href='tel:+918920525465'>+91 8920525465</a>
+                  </p>
                 </div>
               </div>
 
@@ -179,7 +182,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className='font-semibold text-yellow-400'>Email</h4>
-                  <p className='opacity-90'>info@dsenergize.com</p>
+                  <p className='opacity-90'>
+                    <a href='mailto:info@dsenergize.com'>
+                      sales@dsenergize.com
+                    </a>
+                  </p>
                 </div>
               </div>
 

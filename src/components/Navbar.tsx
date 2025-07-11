@@ -41,9 +41,9 @@ const Navbar = () => {
         <div className='flex items-center justify-between h-16'>
           {/* Logo */}
           <div className='flex items-center space-x-2 cursor-pointer group'>
-            {/* <Sun className={`w-8 h-8 transition-all duration-300 ${
+            <Sun className={`w-8 h-8 transition-all duration-300 ${
               isScrolled ? 'text-yellow-500' : 'text-yellow-300'
-            } group-hover:rotate-180`} /> */}
+            } group-hover:rotate-180`} />
             <span
               className={`text-2xl font-bold transition-colors duration-300 ${
                 isScrolled ? "text-blue-900" : "text-white"
@@ -59,7 +59,7 @@ const Navbar = () => {
                 <img
                   src={dselogo2}
                   alt='DSenergize Logo'
-                  className='inline-block w-32'
+                  className='inline-block w-24'
                 />
               )}
             </span>

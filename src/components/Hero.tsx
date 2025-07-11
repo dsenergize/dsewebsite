@@ -22,10 +22,10 @@ const Hero = () => {
     <section className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2026d3]  to-blue-900 pt-16'>
       {/* Animated background elements */}
       <div className='absolute inset-0 overflow-hidden'>
-        <div className='absolute top-20 left-10 w-32 h-32 bg-yellow-300 rounded-full opacity-20 animate-pulse'></div>
-        <div className='absolute top-40 right-20 w-24 h-24 bg-orange-400 rounded-full opacity-30 animate-bounce'></div>
-        <div className='absolute bottom-20 left-1/4 w-40 h-40 bg-blue-400 rounded-full opacity-15 animate-pulse delay-1000'></div>
-        <div className='absolute bottom-40 right-1/3 w-20 h-20 bg-yellow-500 rounded-full opacity-25 animate-bounce delay-500'></div>
+        <div className='absolute top-20 left-10 w-32 h-32 bg-white/15 rounded-full opacity-20 animate-pulse'></div>
+        <div className='absolute top-40 right-20 w-24 h-24 bg-white/10 rounded-full opacity-30 animate-bounce'></div>
+        <div className='absolute bottom-20 left-1/4 w-40 h-40 bg-white/15 rounded-full opacity-15 animate-pulse delay-1000'></div>
+        <div className='absolute bottom-40 right-1/3 w-20 h-20 bg-white/10 rounded-full opacity-25 animate-bounce delay-500'></div>
       </div>
 
       {/* Main content */}

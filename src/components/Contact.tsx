@@ -197,14 +197,14 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className='pt-8'>
+            {/* <div className='pt-8'>
               <Button
                 size='lg'
                 className='bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold px-8 py-4 transition-all duration-300 hover:scale-105'
               >
                 Schedule Free Consultation
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

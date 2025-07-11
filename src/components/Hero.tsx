@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sun } from "lucide-react";
+import dselogo1 from "../assets/logo/dselogo1.png";
 
 const Hero = () => {
   const scrollToServices = () => {
@@ -18,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-400 via-orange-500 to-blue-900 pt-16'>
+    <section className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2026d3]  to-blue-900 pt-16'>
       {/* Animated background elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute top-20 left-10 w-32 h-32 bg-yellow-300 rounded-full opacity-20 animate-pulse'></div>
@@ -37,7 +38,14 @@ const Hero = () => {
         </div>
 
         <h1 className='text-5xl md:text-7xl font-bold mb-6 animate-fade-in'>
-          <span className='text-yellow-300'>DS</span>energize
+          <span className='text-yellow-300'>
+            <img
+              src={dselogo1}
+              alt='DSenergize Logo'
+              className='inline-block md:w-[140px] md:mr-[-12px] w-[80px] mr-[-8px]'
+            />
+          </span>
+          nergize
         </h1>
 
         <p className='text-xl md:text-2xl mb-8 animate-fade-in animation-delay-300 max-w-4xl mx-auto leading-relaxed'>
@@ -64,7 +72,7 @@ const Hero = () => {
             variant='outline'
             className='border-white text-yellow-500 hover:bg-white hover:text-blue-900 px-8 py-4 text-lg transition-all duration-300 hover:scale-105'
           >
-            Get Free Quote
+            Schedule Free Consultation
           </Button>
         </div>
       </div>

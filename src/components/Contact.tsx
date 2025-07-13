@@ -29,8 +29,38 @@ const Contact = () => {
     }));
   };
 
+  const validateForm = () => {
+    const requiredFields = ['name', 'email', 'phone', 'subject', 'requirement', 'rfq', 'message'];
+    const emptyFields = requiredFields.filter(field => !formData[field] || formData[field].toString().trim() === '');
+    
+    if (emptyFields.length > 0) {
+      toast.error("Please fill in all required fields.");
+      return false;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address.");
+      return false;
+    }
+
+    // Phone number validation (basic check for digits)
+    if (!formData.phone || formData.phone.toString().length < 10) {
+      toast.error("Please enter a valid phone number.");
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
     try {
       const res = await submitContactForm(formData);
       if (res.status === 201) {
@@ -76,7 +106,8 @@ const Contact = () => {
                     name='name'
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder='Your Name'
+                    placeholder='Your Name *'
+                    required
                     className='bg-white/10 border-white/30 text-white placeholder-white/70'
                   />
                   <Input
@@ -84,7 +115,8 @@ const Contact = () => {
                     type='email'
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder='Your Email'
+                    placeholder='Your Email *'
+                    required
                     className='bg-white/10 border-white/30 text-white placeholder-white/70'
                   />
                 </div>
@@ -94,14 +126,16 @@ const Contact = () => {
                     type='number'
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder='Mobile Number'
+                    placeholder='Mobile Number *'
+                    required
                     className='bg-white/10 border-white/30 text-white placeholder-white/70'
                   />
                   <Input
                     name='subject'
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder='Subject'
+                    placeholder='Subject *'
+                    required
                     className='bg-white/10 border-white/30 text-white placeholder-white/70'
                   />
                 </div>
@@ -109,21 +143,24 @@ const Contact = () => {
                   name='requirement'
                   value={formData.requirement}
                   onChange={handleChange}
-                  placeholder='Your Requirement'
+                  placeholder='Your Requirement *'
+                  required
                   className='bg-white/10 border-white/30 text-white placeholder-white/70'
                 />
                 <Input
                   name='rfq'
                   value={formData.rfq}
                   onChange={handleChange}
-                  placeholder='Your RFQ'
+                  placeholder='Your RFQ *'
+                  required
                   className='bg-white/10 border-white/30 text-white placeholder-white/70'
                 />
                 <Textarea
                   name='message'
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder='Your Message'
+                  placeholder='Your Message *'
+                  required
                   rows={5}
                   className='bg-white/10 border-white/30 text-white placeholder-white/70'
                 />

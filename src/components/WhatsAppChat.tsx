@@ -18,15 +18,15 @@ const WhatsAppChat: React.FC<WhatsAppChatProps> = ({
   };
 
   return (
-    <div className={`fixed bottom-6 right-6 z-50 ${className}`}>
+    <div className={`fixed bottom-5 right-5 z-50 ${className}`}>
       <button
         onClick={handleWhatsAppClick}
-        className='bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 group'
+        className='bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 group'
         aria-label='Chat on WhatsApp'
       >
         {/* WhatsApp SVG Icon */}
         <svg
-          className='w-6 h-6 md:w-8 md:h-8'
+          className='w-5 h-5 md:w-7 md:h-7'
           fill='currentColor'
           viewBox='0 0 24 24'
           xmlns='http://www.w3.org/2000/svg'

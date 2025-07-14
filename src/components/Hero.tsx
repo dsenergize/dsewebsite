@@ -49,12 +49,14 @@ const Hero = () => {
         </h1>
 
         <p className='text-xl md:text-2xl mb-8 animate-fade-in animation-delay-300 max-w-4xl mx-auto leading-relaxed'>
-          Powering Tomorrow, Energizing Today with DSenergize
+          Track, Analyze, Optimize Solar Energy in Real Time <br /> with Remote
+          Monitoring System Powered by DSenergize.
         </p>
 
         <p className='text-lg mb-12 animate-fade-in animation-delay-500 max-w-3xl mx-auto opacity-90'>
           Transform your energy future with cutting-edge solar solutions
-          designed for homes and businesses
+          designed for your solar plant businesses, offering seamless
+          integration with Loggers and RMS technologies.
         </p>
 
         <div className='flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-700'>

@@ -109,9 +109,6 @@ const Footer = () => {
               <li className='hover:text-white cursor-pointer transition-colors'>
                 Warranty
               </li>
-              <li className='hover:text-white cursor-pointer transition-colors'>
-                Privacy Policy
-              </li>
             </ul>
           </div>
         </div>

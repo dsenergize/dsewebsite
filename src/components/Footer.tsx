@@ -1,5 +1,14 @@
 import React from "react";
-import { Sun, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import {
+  Sun,
+  // Scale,
+  // Shield,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -115,13 +124,16 @@ const Footer = () => {
             </p>
             <div className='flex space-x-6 text-sm text-gray-400'>
               <span className='hover:text-white cursor-pointer transition-colors'>
-                Terms of Service
+                <Link to='/terms'>
+                  {/* <Scale className='h-5 w-5 mr-2' /> */}
+                  Get Terms of Service
+                </Link>
               </span>
               <span className='hover:text-white cursor-pointer transition-colors'>
-                Privacy Policy
-              </span>
-              <span className='hover:text-white cursor-pointer transition-colors'>
-                Cookie Policy
+                <Link to='/privacy'>
+                  {/* <Shield className='h-5 w-5 mr-2' /> */}
+                  Get Privacy Policy
+                </Link>
               </span>
             </div>
           </div>

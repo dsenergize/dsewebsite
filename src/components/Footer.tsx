@@ -9,6 +9,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import dselogo3 from "../assets/logo/dselogo3.png";
 
 const Footer = () => {
   return (
@@ -17,11 +18,18 @@ const Footer = () => {
         <div className='grid grid-cols-1 md:grid-cols-4 gap-8 mb-12'>
           {/* Brand */}
           <div className='space-y-4'>
-            <div className='flex items-center space-x-2'>
-              <Sun className='w-8 h-8 text-yellow-400' />
-              <span className='text-2xl font-bold'>
-                <span className='text-yellow-400'>DS</span>energize
-              </span>
+            <div className='flex items-center space-x-1'>
+              {/* <Sun className='w-8 h-8 text-yellow-400' /> */}
+              <img
+                src={dselogo3}
+                alt='DSenergize Logo'
+                className='inline-block w-14'
+              />
+              <Link to='/'>
+                <span className='text-2xl font-bold'>
+                  <span className='text-yellow-400'>DS</span>energize
+                </span>
+              </Link>
             </div>
             <p className='text-gray-400 leading-relaxed text-justify'>
               DSE provides advanced data logging solutions for the solar

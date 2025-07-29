@@ -1,36 +1,39 @@
-# Step 1: Builder image
+# Stage 1: Build the app
 FROM node:22.15.0-alpine AS builder
-WORKDIR /dsewebsite
 
-# Install build dependencies (for node-gyp, if needed)
+WORKDIR /app
+
+# Install system dependencies
 RUN apk add --no-cache libc6-compat
 
-# Install dependencies
-COPY dsewebsite/package*.json ./
+# Install dependencies and build the app
+COPY package*.json ./
 RUN npm ci
 
-# Copy all source files
-COPY dsewebsite .
+# Copy the rest of the app sources
+COPY . .
 
-# Build the production app
+# Build static files using vite
 RUN npm run build
 
-# Step 2: Production image (using nginx)
-FROM nginx:1.27-alpine AS runner
-WORKDIR /usr/share/nginx/html
+# Stage 2: Run the app with Vite Preview
+FROM node:22.15.0-alpine AS runner
 
-# Remove default nginx static assets
-RUN rm -rf ./*
+WORKDIR /app
 
-# Copy built static files from builder
-COPY --from=builder /dsewebsite/dist .      # For Vite
-# COPY --from=builder /dsewebsite/build .   # For CRA, uncomment if using CRA
+# Install only 'vite' to run vite preview (doesn't need full node_modules)
+RUN npm install -g vite@5.4.1
 
-# Copy nginx config (optional but recommended)
-# COPY ./nginx.conf /etc/nginx/nginx.conf
+# Copy built static files and any necessary files
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/vite.config.* ./
 
-# Expose port 80
-EXPOSE 80
+# Expose the preview port
+EXPOSE 8080
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Set production environment
+ENV NODE_ENV=production
+
+# Run preview server (per your package.json)
+CMD ["vite", "preview", "--port", "8080", "--host", "0.0.0.0"]

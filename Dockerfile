@@ -25,4 +25,4 @@ EXPOSE 8080
 
 ENV NODE_ENV=production
 
-CMD ["sh", "-c", "vite preview --host 0.0.0.0 --port ${PORT:-4173}"]
+CMD ["sh", "-c", "vite preview --host 0.0.0.0 --port ${PORT:-8080}"]

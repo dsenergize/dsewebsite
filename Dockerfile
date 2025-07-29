@@ -1,41 +1,36 @@
-# Base image
-FROM node:22.15.0-alpine AS base
-
-# Dependencies
-FROM base AS deps
+# Step 1: Builder image
+FROM node:22.15.0-alpine AS builder
 WORKDIR /dsewebsite
+
+# Install build dependencies (for node-gyp, if needed)
 RUN apk add --no-cache libc6-compat
 
+# Install dependencies
 COPY dsewebsite/package*.json ./
 RUN npm ci
 
-# Builder
-FROM base AS builder
-WORKDIR /dsewebsite
-COPY --from=deps /dsewebsite/node_modules ./node_modules
+# Copy all source files
 COPY dsewebsite .
 
-ENV NEXT_TELEMETRY_DISABLED 1
+# Build the production app
 RUN npm run build
 
-# Runner
-FROM base AS runner
-WORKDIR /dsewebsite
+# Step 2: Production image (using nginx)
+FROM nginx:1.27-alpine AS runner
+WORKDIR /usr/share/nginx/html
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+# Remove default nginx static assets
+RUN rm -rf ./*
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+# Copy built static files from builder
+COPY --from=builder /dsewebsite/dist .      # For Vite
+# COPY --from=builder /dsewebsite/build .   # For CRA, uncomment if using CRA
 
-COPY --from=builder /dsewebsite/public ./public
-COPY --from=builder --chown=nextjs:nodejs /dsewebsite/.next ./.next
-COPY --from=builder /dsewebsite/node_modules ./node_modules
-COPY --from=builder /dsewebsite/package.json ./package.json
+# Copy nginx config (optional but recommended)
+# COPY ./nginx.conf /etc/nginx/nginx.conf
 
-USER nextjs
+# Expose port 80
+EXPOSE 80
 
-EXPOSE 8080
-ENV PORT 8080
-
-CMD ["npm", "start"]
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

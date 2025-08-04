@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sun } from "lucide-react";
+import { Menu, X, Sun, ChartColumn } from "lucide-react";
 import dselogo2 from "../assets/logo/dselogo2.png";
 import dselogo3 from "../assets/logo/dselogo3.png";
 
@@ -86,10 +86,16 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className='hidden md:block'>
             <Button
-              onClick={() => scrollToSection("#services")}
+              onClick={() =>
+                window.open(
+                  "https://os.dsenergize.com/login",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
               className='bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-2 transition-all duration-300 hover:scale-105 hover:shadow-lg'
             >
-              Pricing & Plans
+              <ChartColumn /> Our OS
             </Button>
           </div>
 

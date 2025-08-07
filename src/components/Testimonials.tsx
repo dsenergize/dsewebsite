@@ -1,14 +1,14 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-import Img1 from "@/assets/logo/1.png"
+// import Img1 from "@/assets/logo/1.png"
 
 const Testimonials = () => {
   const testimonials = [
     {
       name: "Shahbaz Akhter",
       role: "Founder & CEO, DSenergize",
-      image: Img1,
+      image: "",
       content:
         "The DSenergize remote monitoring system is a game-changer. I love being able to see my home's energy production in real-time on my phone. The proactive alerts gave me peace of mind that my investment is always performing its best.",
       rating: 5,
@@ -16,8 +16,7 @@ const Testimonials = () => {
     {
       name: "Danish Ilyas",
       role: "Full Stack Developer",
-      image:
-        "https://drive.google.com/file/d/1apm_BCXMnlBrLQjt5HGD7-k2qsxQ4fMX",
+      image: "",
       content:
         "Managing our company's portfolio of solar assets across multiple locations was a challenge. DSenergize's RMS dashboard centralized everything, allowing us to instantly spot underperforming panels and maximize our energy generation and ROI.",
       rating: 5,
@@ -25,8 +24,7 @@ const Testimonials = () => {
     {
       name: "David Green",
       role: "Solar Farm Investor",
-      image:
-        "https://drive.google.com/file/d/1NSw-b5ToQb6CB-aAsjJS6-4aaZbmg5YK",
+      image: "",
       content:
         "The detailed analytics and reporting from the remote monitoring platform are invaluable. It provides the transparent, verifiable data we need to ensure our assets are operating efficiently and delivering the expected financial returns.",
       rating: 5,

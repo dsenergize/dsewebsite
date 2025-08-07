@@ -136,10 +136,16 @@ const Navbar = () => {
             ))}
             <div className='pt-2'>
               <Button
-                onClick={() => scrollToSection("#contact")}
+                onClick={() =>
+                  window.open(
+                    "https://os.dsenergize.com/login",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
                 className='w-full bg-yellow-500 hover:bg-yellow-400 text-black font-semibold py-2 transition-all duration-300'
               >
-                Get Free Quote
+                <ChartColumn /> Our OS
               </Button>
             </div>
           </div>

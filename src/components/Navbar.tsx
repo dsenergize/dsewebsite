@@ -150,7 +150,7 @@ const Navbar = () => {
                           <NavigationMenuLink asChild>
                             <Link
                               to={s.href}
-                              className='block space-y-1 rounded-md p-3 hover:bg-yellow-200'
+                              className='block space-y-1 rounded-md p-3 hover:bg-yellow-100'
                             >
                               <div className='text-sm font-medium'>
                                 {s.title}
@@ -184,7 +184,7 @@ const Navbar = () => {
                           <NavigationMenuLink asChild>
                             <Link
                               to={r.href}
-                              className='block space-y-1 rounded-md p-3 hover:bg-yellow-50'
+                              className='block space-y-1 rounded-md p-3 hover:bg-yellow-100'
                             >
                               <div className='text-sm font-medium'>
                                 {r.title}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChartColumn } from "lucide-react";
 import dselogo2 from "../assets/logo/dselogo2.png";
@@ -16,12 +16,27 @@ import {
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Logic to determine styles based on route and scroll position
+  const isHomePage = location.pathname === "/";
+  const isTransparent = isHomePage && !isScrolled;
+
+  // Define dynamic classes to be applied below
+  const navbarClasses = isTransparent
+    ? "bg-transparent"
+    : "bg-white/95 backdrop-blur-md shadow-lg";
+  const linkColorClasses = isTransparent
+    ? "text-white hover:text-yellow-300"
+    : "text-gray-700 hover:text-yellow-600";
+  const iconColorClasses = isTransparent ? "text-white" : "text-gray-700";
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -75,41 +90,46 @@ const Navbar = () => {
       description: "Download product information",
     },
     {
-      title: "Whitepapers",
-      href: "/resources/whitepapers",
-      description: "Technical documentation and insights",
-    },
-    {
       title: "Downloads",
       href: "/resources/downloads",
       description: "Software tools and utilities",
+    },
+    {
+      title: "FAQ,s",
+      href: "/resources/whitepapers",
+      description: "Technical documentation and insights",
     },
   ];
 
   const scrollToSection = (href: string) => {
     if (href.startsWith("#")) {
-      const element = document.querySelector(href);
-      if (element) element.scrollIntoView({ behavior: "smooth" });
+      const sectionId = href.substring(1);
+      if (location.pathname !== "/") {
+        navigate("/", { state: { targetId: sectionId } });
+      } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
     }
     setIsMobileMenuOpen(false);
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navbarClasses}`}
     >
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16'>
           {/* Logo */}
-          <div className='flex items-center cursor-pointer'>
-            {isScrolled ? (
-              <img src={dselogo3} alt='DSenergize Logo' className='w-24' />
-            ) : (
+          <Link to='/' className='flex items-center cursor-pointer'>
+            {isTransparent ? (
               <img src={dselogo2} alt='DSenergize Logo' className='w-24' />
+            ) : (
+              <img src={dselogo3} alt='DSenergize Logo' className='w-24' />
             )}
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className='hidden md:flex items-center space-x-8'>
@@ -117,29 +137,19 @@ const Navbar = () => {
               <NavigationMenuList>
                 {navLinks.map((link) => (
                   <NavigationMenuItem key={link.name}>
-                    <NavigationMenuLink asChild>
-                      <button
-                        onClick={() => scrollToSection(link.href)}
-                        className={`px-3 py-2 text-sm font-medium transition ${
-                          isScrolled
-                            ? "text-gray-700 hover:text-yellow-600"
-                            : "text-white hover:text-yellow-300"
-                        }`}
-                      >
-                        {link.name}
-                      </button>
-                    </NavigationMenuLink>
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className={`px-3 py-2 text-sm font-medium transition ${linkColorClasses}`}
+                    >
+                      {link.name}
+                    </button>
                   </NavigationMenuItem>
                 ))}
 
                 {/* Solutions dropdown */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
-                    className={`bg-white/0 px-3 py-2 text-sm font-medium transition ${
-                      isScrolled
-                        ? "text-gray-700 hover:text-yellow-600"
-                        : "text-white hover:text-yellow-300"
-                    }`}
+                    className={`bg-transparent px-3 py-2 text-sm font-medium transition ${linkColorClasses}`}
                   >
                     Solutions
                   </NavigationMenuTrigger>
@@ -169,11 +179,7 @@ const Navbar = () => {
                 {/* Resources dropdown */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
-                    className={`bg-white/0 px-3 py-2 text-sm font-medium transition ${
-                      isScrolled
-                        ? "text-gray-700 hover:text-yellow-600"
-                        : "text-white hover:text-yellow-300"
-                    }`}
+                    className={`bg-transparent px-3 py-2 text-sm font-medium transition ${linkColorClasses}`}
                   >
                     Resources
                   </NavigationMenuTrigger>
@@ -209,7 +215,7 @@ const Navbar = () => {
               }
               className='bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-2 hover:scale-105'
             >
-              <ChartColumn /> Our OS
+              <ChartColumn className='mr-2 h-4 w-4' /> Our OS
             </Button>
           </div>
 
@@ -217,9 +223,7 @@ const Navbar = () => {
           <div className='md:hidden'>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-md ${
-                isScrolled ? "text-gray-700" : "text-white"
-              }`}
+              className={`p-2 rounded-md ${iconColorClasses}`}
             >
               {isMobileMenuOpen ? (
                 <X className='w-6 h-6' />
@@ -284,7 +288,7 @@ const Navbar = () => {
                 }
                 className='w-full bg-yellow-500 hover:bg-yellow-400 text-black font-semibold py-2'
               >
-                <ChartColumn /> Our OS
+                <ChartColumn className='mr-2 h-4 w-4' /> Our OS
               </Button>
             </div>
           </div>

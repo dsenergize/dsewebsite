@@ -1,5 +1,5 @@
-import React from "react";
-import Navbar from "@/components/Navbar";
+import React, { useEffect } from "react"; // Add useEffect
+import { useLocation } from "react-router-dom"; // Add useLocation
 import Hero from "@/components/Hero";
 import ImageCarousel from "@/components/ImageCarousel";
 import Services from "@/components/Services";
@@ -10,9 +10,22 @@ import Footer from "@/components/Footer";
 import WhatsAppChat from "@/components/WhatsAppChat";
 
 const Index = () => {
+  const location = useLocation();
+
+  // This effect runs when the component mounts or location state changes
+  // It checks if we were redirected here with a target section to scroll to
+  useEffect(() => {
+    if (location.state?.targetId) {
+      const element = document.getElementById(location.state.targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <div className='min-h-screen'>
-      <Navbar />
+      {/* REMOVED: The <Navbar /> component is now only in App.tsx */}
       <section id='home'>
         <Hero />
       </section>

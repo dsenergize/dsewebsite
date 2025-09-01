@@ -16,6 +16,13 @@ import CaseStudies from "./pages/resources/CaseStudies";
 import Whitepapers from "./pages/resources/WhitePapers";
 import Brochures from "./pages/resources/Brochures";
 import Downloads from "./pages/resources/Downloads";
+import ResidentialSolar from "./pages/Solutions/ResidentialSolar";
+import IndustrialSolar from "./pages/Solutions/IndustrialSolar";
+import EnergyStorage from "./pages/Solutions/EnergyStorage";
+import CommercialSolar from "./pages/Solutions/CommercialSolar";
+import OMServices from "./pages/Solutions/OMServices";
+import RemoteMonitoring from "./pages/Solutions/RemoteMonitoring";
+import Contact from "./components/Contact";
 
 // Import the new PageLayout component
 import PageLayout from "./components/PageLayout";
@@ -35,37 +42,58 @@ const App = () => (
           <Route path="/" element={<Index />} />
 
           {/* Wrap all other pages with the PageLayout component */}
-          <Route
-            path="/terms"
-            element={<PageLayout><TermsOfService /></PageLayout>}
-          />
-          <Route
-            path="/privacy"
-            element={<PageLayout><PrivacyPolicy /></PageLayout>}
-          />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
 
           {/* Wrap your resource pages */}
-          <Route
-            path="/resources/case-studies"
-            element={<PageLayout><CaseStudies /></PageLayout>}
-          />
-          <Route
-            path="/resources/whitepapers"
-            element={<PageLayout><Whitepapers /></PageLayout>}
-          />
+          <Route path="/resources/case-studies" element={<CaseStudies />} />
+          <Route path="/resources/whitepapers" element={<Whitepapers />} />
           <Route
             path="/resources/brochures"
-            element={<PageLayout><Brochures /></PageLayout>}
+            element={
+              <PageLayout>
+                <Brochures />
+              </PageLayout>
+            }
           />
           <Route
             path="/resources/downloads"
-            element={<PageLayout><Downloads /></PageLayout>}
+            element={
+              <PageLayout>
+                <Downloads />
+              </PageLayout>
+            }
           />
+          <Route path="/Solutions/residential" element={<ResidentialSolar />} />
+          <Route path="/Solutions/industrial" element={<IndustrialSolar />} />
+          <Route
+            path="/Solutions/energy-storage"
+            element={
+              <PageLayout>
+                <EnergyStorage />
+              </PageLayout>
+            }
+          />
+          <Route path="/Solutions/commercial" element={<CommercialSolar />} />
+          <Route path="/Solutions/om-services" element={<OMServices />} />
+          <Route
+            path="/Solutions/remote-monitoring"
+            element={
+              <PageLayout>
+                <RemoteMonitoring />
+              </PageLayout>
+            }
+          />
+          <Route path="/contact" element={<Contact />} />
 
           {/* Wrap the catch-all Not Found page */}
           <Route
             path="*"
-            element={<PageLayout><NotFound /></PageLayout>}
+            element={
+              <PageLayout>
+                <NotFound />
+              </PageLayout>
+            }
           />
         </Routes>
       </BrowserRouter>

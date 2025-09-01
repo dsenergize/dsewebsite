@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from '../../components/Navbar';
+// import Navbar from '../../components/Navbar';
 const Brochures = () => {
   return (
     <>    
-    <Navbar/>
+    {/* <Navbar/> */}
     <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold">Brochures</h1>
       <p className="mt-4">

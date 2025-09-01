@@ -147,13 +147,13 @@ const Navbar = () => {
                 ))}
 
                 {/* Solutions dropdown */}
-                <NavigationMenuItem>
+                <NavigationMenuItem >
                   <NavigationMenuTrigger
                     className={`bg-transparent px-3 py-2 text-sm font-medium transition ${linkColorClasses}`}
                   >
                     Solutions
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                  <NavigationMenuContent  >
                     <ul className='grid w-[500px] gap-3 p-4 md:grid-cols-2'>
                       {solutions.map((s) => (
                         <li key={s.title}>
@@ -177,14 +177,15 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 {/* Resources dropdown */}
-                <NavigationMenuItem>
+                <NavigationMenuItem   >
                   <NavigationMenuTrigger
                     className={`bg-transparent px-3 py-2 text-sm font-medium transition ${linkColorClasses}`}
                   >
-                    Resources
+                    Resources 
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className='grid w-[400px] gap-3 p-4'>
+
+                    <ul className='grid w-[500px] gap-3 p-4 '>
                       {resources.map((r) => (
                         <li key={r.title}>
                           <NavigationMenuLink asChild>
@@ -205,6 +206,7 @@ const Navbar = () => {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+                
               </NavigationMenuList>
             </NavigationMenu>
 

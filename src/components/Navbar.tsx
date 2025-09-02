@@ -90,8 +90,8 @@ const Navbar = () => {
       description: "Download product information",
     },
     {
-      title: "Downloads",
-      href: "/resources/downloads",
+      title: "Blog",
+      href: "/resources/Blog",
       description: "Software tools and utilities",
     },
     {

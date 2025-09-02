@@ -15,7 +15,7 @@ import Navbar from "./components/Navbar";
 import CaseStudies from "./pages/resources/CaseStudies";
 import Whitepapers from "./pages/resources/WhitePapers";
 import Brochures from "./pages/resources/Brochures";
-import Downloads from "./pages/resources/Downloads";
+import Blog from "./pages/resources/Blog";
 import ResidentialSolar from "./pages/Solutions/ResidentialSolar";
 import IndustrialSolar from "./pages/Solutions/IndustrialSolar";
 import EnergyStorage from "./pages/Solutions/EnergyStorage";
@@ -51,16 +51,16 @@ const App = () => (
           <Route
             path="/resources/brochures"
             element={
-              <PageLayout>
+              
                 <Brochures />
-              </PageLayout>
+              
             }
           />
           <Route
-            path="/resources/downloads"
+            path="/resources/Blog"
             element={
               <PageLayout>
-                <Downloads />
+                <Blog />
               </PageLayout>
             }
           />

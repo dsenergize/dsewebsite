@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Eye, Heart } from 'lucide-react';
@@ -8,17 +7,18 @@ const About = () => {
     {
       icon: Target,
       title: "Our Mission",
-      description: "To democratize clean energy by making solar power accessible, affordable, and efficient for everyone."
+      description: "To empower industries by simplifying data acquisition and control. We make sophisticated remote monitoring and SCADA solutions accessible, intuitive, and powerful for businesses of all sizes."
+
     },
     {
       icon: Eye,
       title: "Our Vision",
-      description: "A sustainable future where renewable energy powers every home and business, creating a cleaner planet for generations to come."
+      description: "A future where every industrial asset is connected, every process is optimized through real-time data, and every decision is intelligent. We are building a more efficient, productive, and sustainable industrial ecosystem."
     },
     {
       icon: Heart,
       title: "Our Values",
-      description: "Innovation, integrity, and environmental responsibility guide everything we do in our quest for a greener tomorrow."
+      description: "Innovation, Reliability, and Partnership. These core principles guide everything we do, ensuring the integrity of your data and the success of your operations as we build the future of industrial intelligence together."
     }
   ];
 
@@ -42,8 +42,7 @@ const About = () => {
                 About <span className="text-yellow-400">DSenergize</span>
               </h2>
               <p className="text-xl opacity-90 leading-relaxed">
-                With over a decade of experience in renewable energy, DSenergize has been at the forefront of solar innovation, 
-                transforming how businesses and homeowners harness the power of the sun.
+                With deep expertise in Industrial IoT and data systems,<strong>DS Energize</strong> is at the forefront of the digital transformation. We specialize in providing robust and intelligent solutions that connect, monitor, and control your most critical assets. We turn complex operational data into clear, actionable intelligence, empowering you to achieve unprecedented levels of efficiency and control.
               </p>
             </div>
           </div>
@@ -59,7 +58,9 @@ const About = () => {
 
             <div className="space-y-6">
               {values.map((value, index) => (
-                <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
+                
+              
+                <Card key={index} className="bg-white text-gray-600 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
@@ -69,7 +70,8 @@ const About = () => {
                       </div>
                       <div>
                         <h4 className="text-xl font-bold mb-2 text-yellow-400">{value.title}</h4>
-                        <p className="opacity-90 leading-relaxed">{value.description}</p>
+                        {/* The description's text color is now inherited from the parent Card. */}
+                        <p className="leading-relaxed">{value.description}</p>
                       </div>
                     </div>
                   </CardContent>

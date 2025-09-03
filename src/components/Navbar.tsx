@@ -40,8 +40,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
     { name: "Services", href: "#services" },
+    { name: "About Us", href: "#about" },
     { name: "Contact Us", href: "#contact" },
   ];
 
@@ -98,6 +98,11 @@ const Navbar = () => {
       title: "FAQ,s",
       href: "/resources/whitepapers",
       description: "Technical documentation and insights",
+    },
+     {
+      title: "Gallery & Media",
+      href: "/resources/gallery-media",
+      description: "Images and Video of Company",
     },
   ];
 

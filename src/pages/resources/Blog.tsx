@@ -128,53 +128,6 @@ const Blog = () => {
                 {renderContent(currentPost.content)}
               </div>
             </article>
-
-            {/* 2b. COMMENTS SECTION */}
-            {/* <section className="mt-12">
-              <h3 className="text-2xl font-bold text-blue-900 mb-6">Comments ({commentsList.length})</h3>
-              <div className="bg-gray-50 p-6 rounded-2xl shadow-md mb-8">
-                <h4 className="font-bold text-lg mb-4 text-gray-800">Leave a Reply</h4>
-                <form className="space-y-4" onSubmit={handleCommentSubmit}>
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2" 
-                      placeholder="Your Name" 
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="comment" className="block text-sm font-medium text-gray-700">Comment</label>
-                    <textarea 
-                      id="comment" 
-                      rows="4" 
-                      value={comment}
-                      onChange={(e) => setComment(e.target.value)}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2" 
-                      placeholder="Write your thoughts here..."
-                    ></textarea>
-                  </div>
-                  <button type="submit" className="bg-blue-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                    Post Comment
-                  </button>
-                </form>
-              </div>
-              <div className="space-y-6">
-                {commentsList.map((commentItem, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0"><UserIcon /></div>
-                    <div>
-                      <p className="font-semibold text-gray-900">{commentItem.name}</p>
-                      <p className="text-xs text-gray-500">{commentItem.date}</p>
-                      <p className="mt-2 text-gray-700">{commentItem.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section> */}
           </main>
           
           {/* 2c. SIDEBAR (RIGHT COLUMN) */}

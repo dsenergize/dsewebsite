@@ -54,40 +54,7 @@ const CaseStudies = () => {
               </div>
             </div>
 
-            {/* === CASE STUDY 2: Rewa Ultra Mega Solar Park === */}
-            <div className="bg-gray-50 p-8 md:p-12 rounded-2xl shadow-lg border border-gray-200">
-              <div className="mb-6">
-                <p className="text-sm font-bold text-blue-700">UTILITY-SCALE EFFICIENCY</p>
-                <h2 className="text-3xl font-bold text-gray-900 mt-2">
-                  Enhancing Operational Efficiency for the 250 MW Rewa Ultra Mega Solar Park
-                </h2>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-800 border-l-4 border-yellow-500 pl-4 mb-4">The Challenge</h3>
-                <p className="text-gray-700">
-                  For a massive 250 MW solar park, operational efficiency is critical. The sheer scale makes it extremely difficult to pinpoint the exact location of faults quickly, leading to prolonged energy losses. Managing data from thousands of sources without a clear, simple interface can overwhelm the O&M team.
-                </p>
-              </div>
-              <div className="mt-8">
-                <h3 className="text-xl font-bold text-gray-800 border-l-4 border-yellow-500 pl-4 mb-4">The Solution</h3>
-                <p className="text-gray-700">
-                  DS Energize implemented its advanced monitoring solution with AI-enabled fault detection to proactively identify issues. The system's intuitive, real-time dashboard provided a clear, at-a-glance view of the entire plant's health, simplifying data analysis and empowering the O&M team with actionable insights. This was backed by DS Energize's dedicated and responsive support team.
-                </p>
-              </div>
-              <div className="mt-8">
-                <h3 className="text-xl font-bold text-gray-800 border-l-4 border-yellow-500 pl-4 mb-4">The Results</h3>
-                <blockquote className="bg-white p-6 rounded-lg border-l-4 border-blue-600 shadow-sm">
-                  <p className="text-lg italic text-gray-800">
-                    "DS Energize's monitoring system has helped us reduce downtime and detect faults faster. Their dashboard is intuitive and their support team is extremely responsive."
-                  </p>
-                  <cite className="block text-right mt-4 not-italic font-semibold text-gray-600">
-                    – Operations Head, Rewa Ultra Mega Solar Park
-                  </cite>
-                </blockquote>
-              </div>
-            </div>
-
-            {/* === CASE STUDY 3: Indian Railways === */}
+            {/* === CASE STUDY 2: Indian Railways === */}
             <div className="bg-gray-50 p-8 md:p-12 rounded-2xl shadow-lg border border-gray-200">
               <div className="mb-6">
                 <p className="text-sm font-bold text-blue-700">MULTI-SITE PORTFOLIO MANAGEMENT</p>
@@ -115,6 +82,72 @@ const CaseStudies = () => {
                   </p>
                   <cite className="block text-right mt-4 not-italic font-semibold text-gray-600">
                     – Senior Engineer, Indian Railways, Kharagpur Division
+                  </cite>
+                </blockquote>
+              </div>
+            </div>
+
+            {/* === CASE STUDY 3: Sunshine Engineering === */}
+            <div className="bg-gray-50 p-8 md:p-12 rounded-2xl shadow-lg border border-gray-200">
+              <div className="mb-6">
+                <p className="text-sm font-bold text-blue-700">C&I PERFORMANCE OPTIMIZATION</p>
+                <h2 className="text-3xl font-bold text-gray-900 mt-2">
+                  Maximizing ROI: How Sunshine Engineering Boosted Performance for a 1 MW C&I Solar Plant
+                </h2>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 border-l-4 border-yellow-500 pl-4 mb-4">The Challenge</h3>
+                <p className="text-gray-700">
+                  For its 1 MW commercial solar plant in Maharashtra, Sunshine Engineering was struggling with underperformance. They lacked detailed insights into string-level issues and performance deviations, making it difficult to maximize their return on investment. Manual data collection was proving to be inefficient and prone to error.
+                </p>
+              </div>
+              <div className="mt-8">
+                <h3 className="text-xl font-bold text-gray-800 border-l-4 border-yellow-500 pl-4 mb-4">The Solution</h3>
+                <p className="text-gray-700">
+                  DS Energize implemented its advanced RMS with real-time string monitoring and automated performance ratio (PR) calculations. The platform provided granular data, allowing the O&M team to quickly identify underperforming strings and proactively address issues like soiling and module degradation, ensuring optimal energy generation.
+                </p>
+              </div>
+              <div className="mt-8">
+                <h3 className="text-xl font-bold text-gray-800 border-l-4 border-yellow-500 pl-4 mb-4">The Results</h3>
+                <blockquote className="bg-white p-6 rounded-lg border-l-4 border-blue-600 shadow-sm">
+                  <p className="text-lg italic text-gray-800">
+                    "DS Energize's platform gave us the granular visibility we needed. We improved our plant’s PR by 3% within the first quarter and significantly cut down on diagnostic time."
+                  </p>
+                  <cite className="block text-right mt-4 not-italic font-semibold text-gray-600">
+                    – Technical Head, Sunshine Engineering, Maharashtra
+                  </cite>
+                </blockquote>
+              </div>
+            </div>
+
+            {/* === CASE STUDY 4: Suryam === */}
+            <div className="bg-gray-50 p-8 md:p-12 rounded-2xl shadow-lg border border-gray-200">
+              <div className="mb-6">
+                <p className="text-sm font-bold text-blue-700">GRID COMPLIANCE & ASSET MANAGEMENT</p>
+                <h2 className="text-3xl font-bold text-gray-900 mt-2">
+                  Streamlining Operations: Suryam's Success in Managing a 2.5 MW Plant in Punjab
+                </h2>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 border-l-4 border-yellow-500 pl-4 mb-4">The Challenge</h3>
+                <p className="text-gray-700">
+                  Managing a 2.5 MW solar plant in Kapurthala required precise control and reporting to ensure grid compliance and operational stability. Suryam's team needed a unified platform to monitor key metrics, manage multiple inverters efficiently, and generate accurate reports for stakeholders without manual intervention.
+                </p>
+              </div>
+              <div className="mt-8">
+                <h3 className="text-xl font-bold text-gray-800 border-l-4 border-yellow-500 pl-4 mb-4">The Solution</h3>
+                <p className="text-gray-700">
+                  DS Energize provided a centralized monitoring solution that integrated seamlessly with their existing hardware. The platform offered a comprehensive dashboard for tracking generation, grid parameters, and inverter health. Automated reporting features saved valuable time and ensured data accuracy for regulatory compliance.
+                </p>
+              </div>
+              <div className="mt-8">
+                <h3 className="text-xl font-bold text-gray-800 border-l-4 border-yellow-500 pl-4 mb-4">The Results</h3>
+                <blockquote className="bg-white p-6 rounded-lg border-l-4 border-blue-600 shadow-sm">
+                  <p className="text-lg italic text-gray-800">
+                    "With DS Energize, we have a complete overview of our 2.5 MW plant on a single screen. The automated reports are a game-changer for our compliance and stakeholder communication."
+                  </p>
+                  <cite className="block text-right mt-4 not-italic font-semibold text-gray-600">
+                    – Operations Manager, Suryam, Kapurthala
                   </cite>
                 </blockquote>
               </div>

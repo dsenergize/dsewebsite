@@ -1,4 +1,5 @@
 import React from "react";
+// import CaseStudies from "@/pages/resources/CaseStudies";
 import {
   Facebook,
   Twitter,
@@ -76,19 +77,19 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link className="hover:text-white transition-colors" to="/residential-solar">Residential Solar</Link>
+                <Link className="hover:text-white transition-colors" to="/solutions/residential">Residential Solar</Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/commercial-solar">Commercial Solar</Link>
+                <Link className="hover:text-white transition-colors" to="/solutions/commercial">Commercial Solar</Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/industrial-solutions">Industrial Solutions</Link>
+                <Link className="hover:text-white transition-colors" to="/solutions/industrial">Industrial Solutions</Link>
               </li>
               <li>
                 <Link className="hover:text-white transition-colors" to="/maintenance-amc">Maintenance & AMC</Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/energy-storage">Energy Storage</Link>
+                <Link className="hover:text-white transition-colors" to="/solutions/energy-storage">Energy Storage</Link>
               </li>
             </ul>
           </nav>
@@ -112,7 +113,7 @@ const Footer = () => {
                 <Link className="hover:text-white transition-colors" to="/news">News & Updates</Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/case-studies">Case Studies</Link>
+                <Link className="hover:text-white transition-colors" to="/resources/case-studies">CaseStudies</Link>
               </li>
             </ul>
           </nav>
@@ -127,7 +128,7 @@ const Footer = () => {
                 <Link className="hover:text-white transition-colors" to="/contact">Contact Us</Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/faq">FAQ</Link>
+                <Link className="hover:text-white transition-colors" to="/resources/whitepapers">FAQ</Link>
               </li>
               <li>
                 <Link className="hover:text-white transition-colors" to="/docs">Documentation</Link>

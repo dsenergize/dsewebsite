@@ -23,6 +23,8 @@ import CommercialSolar from "./pages/Solutions/CommercialSolar";
 import OMServices from "./pages/Solutions/OMServices";
 import RemoteMonitoring from "./pages/Solutions/RemoteMonitoring";
 import Contact from "./components/Contact";
+import Gallery from "./pages/resources/Gallery";
+import About from "./components/About";
 
 // Import the new PageLayout component
 import PageLayout from "./components/PageLayout";
@@ -48,44 +50,20 @@ const App = () => (
           {/* Wrap your resource pages */}
           <Route path="/resources/case-studies" element={<CaseStudies />} />
           <Route path="/resources/whitepapers" element={<Whitepapers />} />
-          <Route
-            path="/resources/brochures"
-            element={
-              
-                <Brochures />
-              
-            }
-          />
-          <Route
-            path="/resources/Blog"
-            element={
-              <PageLayout>
-                <Blog />
-              </PageLayout>
-            }
-          />
+          <Route path="/resources/brochures" element={<Brochures />} />
+          <Route path="/resources/Blog" element={<Blog />} />
+          <Route path="/resources/gallery-media" element={<Gallery/>} />
           <Route path="/Solutions/residential" element={<ResidentialSolar />} />
           <Route path="/Solutions/industrial" element={<IndustrialSolar />} />
-          <Route
-            path="/Solutions/energy-storage"
-            element={
-              <PageLayout>
-                <EnergyStorage />
-              </PageLayout>
-            }
-          />
+          <Route path="/Solutions/energy-storage" element={<EnergyStorage />} />
           <Route path="/Solutions/commercial" element={<CommercialSolar />} />
           <Route path="/Solutions/om-services" element={<OMServices />} />
           <Route
             path="/Solutions/remote-monitoring"
-            element={
-              <PageLayout>
-                <RemoteMonitoring />
-              </PageLayout>
-            }
+            element={<RemoteMonitoring />}
           />
           <Route path="/contact" element={<Contact />} />
-
+          <Route path="/About" element={<About />} />
           {/* Wrap the catch-all Not Found page */}
           <Route
             path="*"

@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "@/components/Footer";
 
+
 // You can uncomment this if you have a Navbar component and it's located correctly
 // import Navbar from '../../components/Navbar';
 
@@ -93,7 +94,7 @@ const Brochures = () => {
                       Schedule a Live Demo
                     </button>
                     <a
-                      href="/Datasheet.pdf" // Path to your file in the public folder
+                      href="/AbidfileD.pdf" // Path to your file in the public folder
                       download="Datasheet.pdf" // The filename user will see
                       // Use the same classes to make it look like a button
                       className="bg-gray-200 text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 transition-transform transform hover:scale-105 duration-300 text-center"
@@ -173,8 +174,8 @@ const Brochures = () => {
                       Request a Quote
                     </button>
                     <a
-                      href="/Final DSE logger Brochure.pdf" // Path to your manual in the public folder
-                      download="DSenergize-Solar-Logger-Manual.pdf" // The filename user will see
+                      href="/Abidfile.pdf" // Path to your manual in the public folder
+                      download="Manual.pdf" // The filename user will see
                       // Use the same classes to make it look like a button
                       className="bg-gray-200 text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 transition-transform transform hover:scale-105 duration-300 text-center"
                     >

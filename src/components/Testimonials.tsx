@@ -8,7 +8,7 @@ const Testimonials = () => {
     {
       name: "Shahbaz Akhter",
       role: "Founder & CEO, DSenergize",
-      image: "",
+      image: "https://media-del1-1.cdn.whatsapp.net/v/t61.24694-24/456031128_2240910346266497_8474055792725903276_n.jpg?ccb=11-4&oh=01_Q5Aa2QEv07Tso-P5om2PTFNNM8lp8OTCDs152zBwaZUtnjCGpQ&oe=68C7BAC7&_nc_sid=5e03e0&_nc_cat=104",
       content:
         "The DSenergize remote monitoring system is a game-changer. I love being able to see my home's energy production in real-time on my phone. The proactive alerts gave me peace of mind that my investment is always performing its best.",
       rating: 5,
@@ -16,7 +16,7 @@ const Testimonials = () => {
     {
       name: "Danish Ilyas",
       role: "Full Stack Developer",
-      image: "",
+      image: "https://media-del1-1.cdn.whatsapp.net/v/t61.24694-24/507921728_1242947670456402_7926231869976855401_n.jpg?ccb=11-4&oh=01_Q5Aa2QEWxnH0p5q0Z2DiJwTBuNjDoFIq4Qvm7OiE6sedKvy3Mw&oe=68C78968&_nc_sid=5e03e0&_nc_cat=104",
       content:
         "Managing our company's portfolio of solar assets across multiple locations was a challenge. DSenergize's RMS dashboard centralized everything, allowing us to instantly spot underperforming panels and maximize our energy generation and ROI.",
       rating: 5,
@@ -24,7 +24,7 @@ const Testimonials = () => {
     {
       name: "David Green",
       role: "Solar Farm Investor",
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTevUwZJM2JzUarw4SPkl4wRqfDwG7-McWSpg&s",
       content:
         "The detailed analytics and reporting from the remote monitoring platform are invaluable. It provides the transparent, verifiable data we need to ensure our assets are operating efficiently and delivering the expected financial returns.",
       rating: 5,

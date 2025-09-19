@@ -3,8 +3,8 @@ export const blogData = {
   "blog1": {
     "slug": "real-time-monitoring-roi",
     "title": "DS Energize Powers 2.7MW Rooftop Solar at Kharagpur Railway Workshop",
-    "author": "Shahbaz Akhter",
-    "date": "September 2, 2025",
+    "author": "Syedah Fatma akhter",
+    "date": "September 19, 2025",
     "imageUrl": DS,
     "altText": "A modern solar panel monitoring dashboard on a screen",
     "content": [
@@ -28,7 +28,7 @@ export const blogData = {
  { "type": "paragraph", "text": "🚆 Dependable solar energy aiding daily train operations" },
   { "type": "paragraph", "text": "💡 An established framework for additional rooftop solar initiatives in railway workshops throughout India." },
 
-        { "type": "heading", "text": "🚀 The Contribution of DS Energize to India’s Renewable Future" },
+        { "type": "heading", "text": "The Contribution of DS Energize to India’s Renewable Future" },
              { "type": "paragraph", "text": "This project emphasizes how advanced solar monitoring systems can change the energy consumption of essential infrastructure such as Indian Railways. At DS Energize, we see solar data loggers and monitoring software as the unseen drivers of effective plants transforming raw solar energy into valuable insights. From tracking solar energy in rooftop installations to extensive solar farms, our objective is straightforward: to ensure every watt counts with accuracy and dependability." },
 
     ]

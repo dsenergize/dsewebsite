@@ -10,6 +10,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./lib/ScrollToTop";
 import Navbar from "./components/Navbar";
+import AddBlogPage from "./pages/CreateBlog";
 
 // Import your new resource pages
 import CaseStudies from "./pages/resources/CaseStudies";
@@ -52,12 +53,13 @@ const App = () => (
           <Route path="/resources/whitepapers" element={<Whitepapers />} />
           <Route path="/resources/brochures" element={<Brochures />} />
           <Route path="/resources/Blog" element={<Blog />} />
-          <Route path="/resources/gallery-media" element={<Gallery/>} />
+          <Route path="/resources/gallery-media" element={<Gallery />} />
           <Route path="/Solutions/residential" element={<ResidentialSolar />} />
           <Route path="/Solutions/industrial" element={<IndustrialSolar />} />
           <Route path="/Solutions/energy-storage" element={<EnergyStorage />} />
           <Route path="/Solutions/commercial" element={<CommercialSolar />} />
           <Route path="/Solutions/om-services" element={<OMServices />} />
+          <Route path="/add-blog" element={<AddBlogPage />} />
           <Route
             path="/Solutions/remote-monitoring"
             element={<RemoteMonitoring />}

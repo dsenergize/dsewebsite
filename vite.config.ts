@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+     allowedHosts: [
+      'strapi-dsewebsite.onrender.com',
+    ],
   },
   plugins: [
     react(),

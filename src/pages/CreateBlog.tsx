@@ -40,7 +40,7 @@ const AddBlogPage = () => {
       const formData = new FormData();
       formData.append('files', imageFile);
 
-      const uploadResponse = await fetch('http://localhost:1337/api/upload', {
+      const uploadResponse = await fetch( 'https://strapi-dsewebsite-d05s.onrender.com/api/blog-posts?populate=*', {
         method: 'POST',
         body: formData,
       });
@@ -63,7 +63,7 @@ const AddBlogPage = () => {
         },
       };
 
-      const postResponse = await fetch('http://localhost:1337/api/blog-posts', {
+      const postResponse = await fetch( 'https://strapi-dsewebsite-d05s.onrender.com/api/blog-posts?populate=*', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newBlogData),

@@ -36,10 +36,15 @@ const Blog = () => {
 
         // Map API data to a clean object for the component to use
         const normalizedApiPosts = validApiPosts.map(post => {
-          const imageAttributes = post.Image?.data?.attributes;
-  
-  // Use the URL directly from Cloudinary, with a fallback
-  const imageUrl = imageAttributes?.formats?.large?.url || imageAttributes?.url || 'https://placehold.co/800x400';
+         const imageAttributes = post.Image?.data?.attributes || post.Image;
+
+const imageUrl = 
+    imageAttributes?.formats?.large?.url || 
+    imageAttributes?.formats?.medium?.url || 
+    imageAttributes?.formats?.small?.url || 
+    imageAttributes?.formats?.thumbnail?.url || // Added thumbnail for safety
+    imageAttributes?.url || 
+    'https://placehold.co/800x400';
 
           return {
             id: post.id,

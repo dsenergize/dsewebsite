@@ -195,11 +195,11 @@ const Footer = () => {
               </li>
               <li>
                 {" "}
-                <div className="mt-10 flex justify-end">
+                <div className="mt-10  p-2  bg-black hover:bg-black transition-colors ">
                   <img
                     src={StartUp}
                     alt="Startup"
-                    className="w-50    transition-transform duration-300"
+                    className="w-50  shadow-md  transition-transform duration-300"
                   />
                 </div>
               </li>

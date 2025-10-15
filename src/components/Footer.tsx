@@ -1,13 +1,9 @@
 import React from "react";
 // import CaseStudies from "@/pages/resources/CaseStudies";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-} from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import dselogo3 from "../assets/logo/dselogo3.png";
+import StartUp from "../assets/StartUp.jpg";
 
 const Footer = () => {
   return (
@@ -77,19 +73,44 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link className="hover:text-white transition-colors" to="/solutions/residential">Residential Solar</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/solutions/residential"
+                >
+                  Residential Solar
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/solutions/commercial">Commercial Solar</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/solutions/commercial"
+                >
+                  Commercial Solar
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/solutions/industrial">Industrial Solutions</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/solutions/industrial"
+                >
+                  Industrial Solutions
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/maintenance-amc">Maintenance & AMC</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/maintenance-amc"
+                >
+                  Maintenance & AMC
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/solutions/energy-storage">Energy Storage</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/solutions/energy-storage"
+                >
+                  Energy Storage
+                </Link>
               </li>
             </ul>
           </nav>
@@ -101,19 +122,38 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link className="hover:text-white transition-colors" to="/about">About Us</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/about"
+                >
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/team">Our Team</Link>
+                <Link className="hover:text-white transition-colors" to="/team">
+                  Our Team
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/careers">Careers</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/careers"
+                >
+                  Careers
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/news">News & Updates</Link>
+                <Link className="hover:text-white transition-colors" to="/news">
+                  News & Updates
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/resources/case-studies">CaseStudies</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/resources/case-studies"
+                >
+                  CaseStudies
+                </Link>
               </li>
             </ul>
           </nav>
@@ -125,16 +165,43 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link className="hover:text-white transition-colors" to="/contact">Contact Us</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/contact"
+                >
+                  Contact Us
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/resources/whitepapers">FAQ</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/resources/whitepapers"
+                >
+                  FAQ
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/docs">Documentation</Link>
+                <Link className="hover:text-white transition-colors" to="/docs">
+                  Documentation
+                </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition-colors" to="/warranty">Warranty</Link>
+                <Link
+                  className="hover:text-white transition-colors"
+                  to="/warranty"
+                >
+                  Warranty
+                </Link>
+              </li>
+              <li>
+                {" "}
+                <div className="mt-10 flex justify-end">
+                  <img
+                    src={StartUp}
+                    alt="Startup"
+                    className="w-50    transition-transform duration-300"
+                  />
+                </div>
               </li>
             </ul>
           </nav>
@@ -150,7 +217,10 @@ const Footer = () => {
               <Link className="hover:text-white transition-colors" to="/terms">
                 Terms of Service
               </Link>
-              <Link className="hover:text-white transition-colors" to="/privacy">
+              <Link
+                className="hover:text-white transition-colors"
+                to="/privacy"
+              >
                 Privacy Policy
               </Link>
             </div>

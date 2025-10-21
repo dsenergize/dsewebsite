@@ -3,7 +3,7 @@ import React from "react";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import dselogo3 from "../assets/logo/dselogo3.png";
-import StartUp from "../assets/StartUp.jpg";
+import StartUp from "../assets/StartUp.png";
 
 const Footer = () => {
   return (
@@ -195,11 +195,11 @@ const Footer = () => {
               </li>
               <li>
                 {" "}
-                <div className="mt-10  p-2  bg-black hover:bg-black transition-colors ">
+                <div className="mt-10  p-2 ">
                   <img
                     src={StartUp}
                     alt="Startup"
-                    className="w-50  shadow-md  transition-transform duration-300"
+                    className="w-40 h-auto"
                   />
                 </div>
               </li>

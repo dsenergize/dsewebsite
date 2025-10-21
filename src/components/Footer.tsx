@@ -196,11 +196,11 @@ const Footer = () => {
               <li>
                 {" "}
                 <div className="mt-10  p-2 ">
-                  <img
+                  {/* <img
                     src={StartUp}
                     alt="Startup"
-                    className="w-40 h-auto"
-                  />
+                    className="w-48 h-auto"
+                  /> */}
                 </div>
               </li>
             </ul>

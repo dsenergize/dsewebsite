@@ -27,7 +27,7 @@ const Testimonials = () => {
       role: "Project Manager, Sunshine Engineering",
       image: pic2,
       content:
-        "DSenergize RMS has transformed management of our 3.5MW ground-mounted solar assets across Maharashtra. The centralized dashboard provides instant performance insights for addressing underperforming panels and optimizing energy. This solution significantly improves operational efficiency while delivering strong returns.",
+        "DSenergize RMS has transformed management of our 3.5MW ground-mounted solar assets across Maharashtra. The centralized dashboard provides instant performance insights for addressing underperforming panels and optimizing energy. This comprehensive solution significantly improves operational efficiency while delivering strong returns across our portfolio.",
       rating: 5,
     },
     {
@@ -95,7 +95,7 @@ const Testimonials = () => {
                   <div className="p-2">
                     {" "}
                     {/* Increased padding */}
-                    <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 bg-white border min-h-[480px] flex flex-col relative z-10 hover:z-20">
+                    <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 bg-white border h-full w-[350px] flex flex-col relative z-10 hover:z-20 gap-5">
                       {" "}
                       {/* Added z-index */}
                       <CardContent className="p-6 h-full flex flex-col">

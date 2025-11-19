@@ -1,28 +1,48 @@
-# -------------------------
-# Node / Backend
-# -------------------------
+# ============================
+# Global Ignores
+# ============================
 node_modules/
+dist/
+build/
+.tmp/
+logs/
+*.log
+*.bak
+*.tsbuildinfo
+.vite/
+.DS_Store
+Thumbs.db
+
+# ============================
+# Environment Files
+# ============================
+# All env files in entire repo
+*.env
+*.env.*
+!example.env
+
+# ============================
+# Root-level
+# ============================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-logs/
-*.log
-dist/
-build/
-.tmp/
 
-# Environment files
-.env
-.env.*
-.env.local
-.env.development.local
-.env.production.local
-.env.test.local
+# Coverage
+coverage/
 
-# -------------------------
-# Frontend (React + Vite)
-# -------------------------
+# Editors
+*.swp
+*.swo
+*.idea
+*.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# ============================
+# FRONTEND (React + Vite)
+# ============================
 Frontend/node_modules/
 Frontend/dist/
 Frontend/.vite/
@@ -31,27 +51,29 @@ Frontend/*.local
 Frontend/.DS_Store
 
 # Vite cache
-.vite/
+Frontend/vite.config.js.timestamp*
+Frontend/vite.config.mjs.timestamp*
 
-# Editor files
-*.swp
-*.swo
-*.idea
-*.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
+# ============================
+# BACKEND (Node + Express)
+# ============================
+Backend/node_modules/
+Backend/logs/
+Backend/debug.log
+Backend/*.log
+Backend/.env
+Backend/.env.*
+Backend/Uploads/
+Backend/temp/
+Backend/dist/
+Backend/build/
 
-# OS-specific files
+# Multer uploads (keep folder, ignore files)
+Backend/Uploads/*
+!Backend/Uploads/.gitkeep
+
+# ============================
+# OS-Specific
+# ============================
 .DS_Store
 Thumbs.db
-
-# -------------------------
-# Compiled output
-# -------------------------
-*.tsbuildinfo
-
-# -------------------------
-# Misc
-# -------------------------
-coverage/
-*.bak

@@ -1,0 +1,57 @@
+# -------------------------
+# Node / Backend
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+dist/
+build/
+.tmp/
+
+# Environment files
+.env
+.env.*
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# -------------------------
+# Frontend (React + Vite)
+# -------------------------
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.vite/
+Frontend/.cache/
+Frontend/*.local
+Frontend/.DS_Store
+
+# Vite cache
+.vite/
+
+# Editor files
+*.swp
+*.swo
+*.idea
+*.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Compiled output
+# -------------------------
+*.tsbuildinfo
+
+# -------------------------
+# Misc
+# -------------------------
+coverage/
+*.bak

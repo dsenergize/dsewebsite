@@ -7,8 +7,8 @@ import authRoutes from "./Routes/authRoutes.js";
 
 dotenv.config();
 
-// Force PORT to 5000
-const PORT = 5000;
+// Use environment port in production
+const PORT = process.env.PORT || 5000;
 console.log("Loaded PORT =", PORT);
 
 // Connect to MongoDB

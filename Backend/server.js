@@ -1,11 +1,17 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 import connectDB from "./Configs/db.js";
 import blogRoutes from "./Routes/blogRoutes.js";
 import authRoutes from "./Routes/authRoutes.js";
 
 dotenv.config();
+
+// Get __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Use environment port in production
 const PORT = process.env.PORT || 5000;
@@ -25,6 +31,19 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/auth', authRoutes);
 app.use("/api/blogs", blogRoutes);
+
+// Serve static files from dist folder (frontend build)
+const distPath = path.join(__dirname, "./dist");
+app.use(express.static(distPath));
+
+// Fallback route for React Router - serves index.html for all non-API routes
+app.get("*", (req, res) => {
+  // Don't serve index.html for API routes
+  if (req.path.startsWith("/api/")) {
+    return res.status(404).json({ message: "API route not found" });
+  }
+  res.sendFile(path.join(distPath, "index.html"));
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {

@@ -14,12 +14,19 @@ logs/
 Thumbs.db
 
 # ============================
-# Environment Files
+# Environment Files - CRITICAL FOR DEPLOYMENT
 # ============================
-# All env files in entire repo
-*.env
-*.env.*
+# Never commit credentials!
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+env-vars.txt
+
+# Allowed (examples only - no credentials)
 !example.env
+!.env.example
 
 # ============================
 # Root-level
@@ -35,8 +42,8 @@ coverage/
 # Editors
 *.swp
 *.swo
-*.idea
-*.vscode/*
+.idea/
+.vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
 
@@ -49,6 +56,9 @@ Frontend/.vite/
 Frontend/.cache/
 Frontend/*.local
 Frontend/.DS_Store
+Frontend/.env.development
+Frontend/.env.local
+Frontend/.env.*.local
 
 # Vite cache
 Frontend/vite.config.js.timestamp*
@@ -62,7 +72,10 @@ Backend/logs/
 Backend/debug.log
 Backend/*.log
 Backend/.env
-Backend/.env.*
+Backend/.env.local
+Backend/.env.*.local
+Backend/.env.development
+Backend/.env.production
 Backend/Uploads/
 Backend/temp/
 Backend/dist/
@@ -73,7 +86,63 @@ Backend/Uploads/*
 !Backend/Uploads/.gitkeep
 
 # ============================
+# GCP Deployment Files
+# ============================
+# Environment variables for Cloud Run (contains credentials)
+env-vars.txt
+env-vars.*.txt
+
+# GCP service account keys (if using)
+*.json.key
+*-key.json
+service-account-key.json
+
+# ============================
+# Docker
+# ============================
+.dockerignore
+docker-compose.override.yml
+
+# ============================
+# GCP Cloud Build
+# ============================
+cloudbuild.log
+cloudbuild.*.log
+
+# ============================
+# IDE & Tools
+# ============================
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+.history/
+.localhistory/
+
+# ============================
 # OS-Specific
 # ============================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+
+# ============================
+# Testing
+# ============================
+.nyc_output/
+coverage/
+*.lcov
+
+# ============================
+# Build Artifacts
+# ============================
+dist/
+build/
+out/
+*.tsbuildinfo

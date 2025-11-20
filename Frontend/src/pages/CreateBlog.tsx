@@ -9,6 +9,9 @@ import "react-quill/dist/quill.snow.css";
 
 type SubmitStatus = "success" | "error" | null;
 
+// Get API URL from environment or use default
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+
 const CreateBlog = () => {
   const navigate = useNavigate();
   const { getToken } = useAuth();
@@ -27,8 +30,9 @@ const CreateBlog = () => {
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
-  const [errorMessage, setErrorMessage] = useState<string>(""); // Quill Toolbar Options (Headings, bold, italic, lists, colors, etc.)
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
+  // Quill Toolbar Options (Headings, bold, italic, lists, colors, etc.)
   const quillModules = {
     toolbar: [
       [{ header: [1, 2, 3, false] }],
@@ -71,8 +75,9 @@ const CreateBlog = () => {
       };
       reader.readAsDataURL(file);
     }
-  }; // Prefill when navigated from Edit (Blog page passes post in state)
+  };
 
+  // Prefill when navigated from Edit (Blog page passes post in state)
   useEffect(() => {
     const state = (location && (location as any).state) || null;
     if (state && state.post) {
@@ -86,7 +91,8 @@ const CreateBlog = () => {
           ? new Date(post.date).toISOString().slice(0, 10)
           : post.publishedOn || new Date().toISOString().slice(0, 10)
       );
-      setContent(post.content || post.mainContent || ""); // If post has imageUrl, show it as preview (no need to upload again unless user selects a new one)
+      setContent(post.content || post.mainContent || "");
+      // If post has imageUrl, show it as preview (no need to upload again unless user selects a new one)
       if (post.imageUrl) {
         setImagePreview(post.imageUrl);
       }
@@ -94,8 +100,9 @@ const CreateBlog = () => {
   }, [location]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // If creating new, require image; if editing and no existing image, require image
+    e.preventDefault();
 
+    // If creating new, require image; if editing and no existing image, require image
     if (!isEditing && !imageFile) {
       setErrorMessage("Please select an image to upload.");
       return;
@@ -112,29 +119,29 @@ const CreateBlog = () => {
 
     setIsSubmitting(true);
     setSubmitStatus(null);
-    setErrorMessage(""); // 1. Get initial token for image upload
+    setErrorMessage("");
 
+    // 1. Get initial token for image upload
     let token = await getToken();
 
     if (!token) {
       setErrorMessage("Authentication error. Please try logging in again.");
       setIsSubmitting(false);
       return;
-    } // If user selected a new image file, upload it first to get imageUrl
+    }
 
+    // If user selected a new image file, upload it first to get imageUrl
     let imageUrl = imagePreview;
     if (imageFile) {
+      console.log("📸 Uploading image...");
       const imageFormData = new FormData();
       imageFormData.append("image", imageFile);
 
-      const uploadResponse = await fetch(
-        "http://localhost:5000/api/blogs/upload",
-        {
-          method: "POST",
-          headers: { Authorization: `Bearer ${token}` },
-          body: imageFormData,
-        }
-      );
+      const uploadResponse = await fetch(`${API_URL}/blogs/upload`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+        body: imageFormData,
+      });
 
       if (!uploadResponse.ok) {
         setErrorMessage("Failed to upload the image.");
@@ -144,6 +151,7 @@ const CreateBlog = () => {
 
       const uploadData = await uploadResponse.json();
       imageUrl = uploadData.imageUrl || uploadData.url || imageUrl;
+      console.log("✅ Image uploaded successfully:", imageUrl);
     }
 
     // 2. IMPORTANT FIX: Get a fresh token for the final submission
@@ -170,34 +178,44 @@ const CreateBlog = () => {
       mainContent: content, // HTML saved
       imageUrl,
       slug,
-    }; // If editing, call PUT to update the blog; otherwise POST to create
+    };
 
+    console.log("📝 Submitting blog data:", blogData);
+
+    // If editing, call PUT to update the blog; otherwise POST to create
     let response;
     if (isEditing && editingId) {
-      response = await fetch(`http://localhost:5000/api/blogs/${editingId}`, {
+      console.log(`📝 Updating blog with ID: ${editingId}`);
+      response = await fetch(`${API_URL}/blogs/${editingId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${finalToken}`, // Use the fresh token
+          Authorization: `Bearer ${finalToken}`,
         },
         body: JSON.stringify(blogData),
       });
     } else {
-      response = await fetch("http://localhost:5000/api/blogs", {
+      console.log("📤 Creating new blog post");
+      response = await fetch(`${API_URL}/blogs`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${finalToken}`, // Use the fresh token
+          Authorization: `Bearer ${finalToken}`,
         },
         body: JSON.stringify(blogData),
       });
     }
 
+    console.log("Response status:", response.status);
+
     if (response.ok) {
+      const responseData = await response.json();
+      console.log("✅ Blog saved successfully:", responseData);
       setSubmitStatus("success");
       setTimeout(() => navigate("/resources/Blog"), 1200);
     } else {
       const errorData = await response.json();
+      console.error("❌ Error response:", errorData);
       setErrorMessage(errorData.message || "Failed to save the blog post.");
       setIsSubmitting(false);
     }
@@ -227,7 +245,6 @@ const CreateBlog = () => {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              ={" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -349,7 +366,7 @@ const CreateBlog = () => {
                 disabled={isSubmitting}
                 className="flex-1 py-3 px-6 bg-green-600 text-white text-xl font-semibold rounded-lg"
               >
-                {isSubmitting ? "Publishing..." : "✓ Publish Blog Post"}{" "}
+                {isSubmitting ? "Publishing..." : "✓ Publish Blog Post"}
               </button>
               <button
                 type="button"

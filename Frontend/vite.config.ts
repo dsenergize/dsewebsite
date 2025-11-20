@@ -1,3 +1,5 @@
+// === FRONTEND: vite.config.ts ===
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -8,18 +10,38 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-     allowedHosts: [
-      'strapi-dsewebsite.onrender.com',
+    allowedHosts: [
+      "strapi-dsewebsite.onrender.com",
+      "localhost",
+      "127.0.0.1",
     ],
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  build: {
+    outDir: "dist",
+    sourcemap: false,
+    minify: "terser",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          clerk: ["@clerk/clerk-react"],
+          markdown: ["react-markdown", "react-quill"],
+        },
+      },
+    },
+  },
+  define: {
+    "process.env.VITE_API_URL": JSON.stringify(
+      process.env.VITE_API_URL || "http://localhost:5000/api"
+    ),
   },
 }));

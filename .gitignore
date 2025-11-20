@@ -110,6 +110,11 @@ cloudbuild.log
 cloudbuild.*.log
 
 # ============================
+# Deployment Artifacts
+# ============================
+.gcloudignore
+
+# ============================
 # IDE & Tools
 # ============================
 .vscode/

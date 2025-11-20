@@ -389,7 +389,7 @@ const Blog = () => {
                     <>
                       <button
                         onClick={handleEditBlog}
-                        className="w-full px-4 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 font-semibold shadow-md transition-all flex items-center justify-center gap-2"
+                        className="w-full px-4 py-3 bg-white text-blue-900 rounded-lg hover:bg-blue-50 font-semibold shadow-md transition-all flex items-center justify-center gap-2"
                       >
                         <svg
                           className="w-5 h-5"
@@ -409,7 +409,7 @@ const Blog = () => {
 
                       <button
                         onClick={handleDeleteBlog}
-                        className="w-full px-4 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 font-semibold shadow-md transition-all flex items-center justify-center gap-2"
+                        className="w-full px-4 py-3 bg-white text-blue-900 rounded-lg hover:bg-blue-50 font-semibold shadow-md transition-all flex items-center justify-center gap-2"
                       >
                         <svg
                           className="w-5 h-5"

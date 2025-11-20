@@ -33,7 +33,7 @@ app.use('/api/auth', authRoutes);
 app.use("/api/blogs", blogRoutes);
 
 // Serve static files from dist folder (frontend build)
-const distPath = path.join(__dirname, "./dist");
+const distPath = path.join(__dirname, "../Frontend/dist");
 app.use(express.static(distPath));
 
 // Fallback route for React Router - serves index.html for all non-API routes

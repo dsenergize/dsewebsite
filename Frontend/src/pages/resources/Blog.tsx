@@ -23,7 +23,7 @@ const ALLOWLIST = [
 ];
 
 // --- Configuration ---
-const API_URL = "http://localhost:5000/api/blogs";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 // --- SVG Icons ---
 const LinkedinIcon = () => (
@@ -117,26 +117,28 @@ const Blog = () => {
   };
 
   const handleDeleteBlog = async () => {
-    if (!window.confirm("Are you sure you want to delete this blog post?"))
-      return;
+  if (!window.confirm("Are you sure you want to delete this blog post?"))
+    return;
 
-    const token = await getToken();
+  const token = await getToken();
 
-    const response = await fetch(`${API_URL}/${currentPost.id}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    });
+  const response = await fetch(`${API_URL}/blogs/${currentPost.id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
 
-    if (response.ok) {
-      alert("Blog post deleted successfully.");
-      window.location.reload();
-    } else {
-      throw new Error("Delete failed");
-    }
-  };
+  if (response.ok) {
+    alert("Blog post deleted successfully.");
+    window.location.reload();
+  } else {
+    const err = await response.text();
+    console.error(err);
+    throw new Error("Delete failed");
+  }
+};
 
   // Detect if content is HTML or Markdown
   const isHTMLContent = (content) => /<[^>]*>/g.test(content);

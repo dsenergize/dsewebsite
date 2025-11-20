@@ -1,23 +1,32 @@
 import express from "express";
-import { getAllBlogs, getBlogBySlug, createBlog, updateBlog, deleteBlog } from "../Controllers/blogControllers.js";
+import { 
+  getAllBlogs, 
+  getBlogBySlug, 
+  createBlog, 
+  updateBlog, 
+  deleteBlog 
+} from "../Controllers/blogControllers.js";
+
 import { authenticateToken } from "../Middlewares/authMiddlewares.js";
 import { uploadImage } from "../Controllers/imageControllers.js";
 import uploadMiddleware from "../Middlewares/uploadMiddleware.js";
 
 const router = express.Router();
 
-// GET routes
-router.get("/", getAllBlogs);
-router.get("/:slug", getBlogBySlug);
-
-// POST routes (Create)
-router.post("/", authenticateToken, uploadMiddleware.single("image"), createBlog);
-router.post("/upload", authenticateToken, uploadMiddleware.single("image"), uploadImage);
-
-// PUT routes (Update)
+// DELETE & UPDATE must come BEFORE slug route
+router.delete("/:id", authenticateToken, deleteBlog);
 router.put("/:id", authenticateToken, uploadMiddleware.single("image"), updateBlog);
 
-// DELETE routes
-router.delete("/:id", authenticateToken, deleteBlog);
+// GET all
+router.get("/", getAllBlogs);
+
+// upload
+router.post("/upload", authenticateToken, uploadMiddleware.single("image"), uploadImage);
+
+// create
+router.post("/", authenticateToken, uploadMiddleware.single("image"), createBlog);
+
+// GET by slug (this must remain last)
+router.get("/:slug", getBlogBySlug);
 
 export default router;
